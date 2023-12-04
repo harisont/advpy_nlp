@@ -41,6 +41,11 @@ With __Part-Of-Speech annotation__ and __dependency parsing__:
 <!--so we take away the adverb, highlight the word they are referred to and ask the learner to place them in the correct spot-->
 With __Part-Of-Speech annotation__ and __dependency parsing__:
 
+![](question.png)
+
+## How
+With __Part-Of-Speech annotation__ and __dependency parsing__:
+
 ![](wrong.png)
 
 ## How
@@ -53,10 +58,35 @@ With __Part-Of-Speech annotation__ and __dependency parsing__:
 - [__python-korp__](https://github.com/mikahama/python-korp), a wrapper for the [Korp](https://spraakbanken.gu.se/korp/) API, to retrieve linguistically pre-annotated sentences from large Swedish corpora
 - [__Spacy__](https://spacy.io/), a widely used NLP library, to annotate our own sentences
 
-# Let's build something! <!-- - Korp tour (incl. utökade queries) - Korp API - Korp notebook - basic app building - Spacy notebook - Spacy adaptation-->
+# Korp <!-- - Korp tour (incl. utökade queries) - Korp API - Korp notebook - basic app building - Spacy notebook - Spacy adaptation-->
+
+## A basic application with Korp
+1. get a random concordance containing an adverb
+2. generate a question:
+   1. set aside the adverb
+   2. highlight its head <!--aka the word it is referred to-->
+3. ask the user to input a 3+ word-long sequence _including_ the adverb <!--the idea is inputting surrounding words too, could be improved for beginning/end-->
+4. check whether the sequence is included in the original sentence 
+
+# Spacy
+
+## Extending the application
+
+__If the path to a custom input file is provided__:
+
+1. __read the file and split it into sentences__ (we can assume that there is one sentence per line)
+2. __parse all sentences with Spacy__
+3. get a random concordance containing an adverb (__new query and matching function!__)
+4. __transform it to a korp-like dict with `to_korp_dict`__
+
+Otherwise:
+
+1. get a random Korp concordance containing an adverb
+
+Then, generate a question and check the user answer as usual.
 
 ## In conclusion
-2h prototype of a language learning app:
+2h-prototype of a simple language learning app:
 
 - code: [`github.com/harisont/advpy_nlp`](https://github.com/harisont/advpy_nlp)
 - possible extensions:
@@ -68,4 +98,5 @@ With __Part-Of-Speech annotation__ and __dependency parsing__:
 ## To learn more
 - Korp user manual: [`spraakbanken.gu.se/en/tools/korp/user-manual`](https://spraakbanken.gu.se/en/tools/korp/user-manual)
 - Official Spacy website: [`spacy.io`]((https://spacy.io/))
+- the exercise class tomorrow <!--show pdf of the exercise-->
 - <!--and last but not least-->Aarne's Computational Syntax course
