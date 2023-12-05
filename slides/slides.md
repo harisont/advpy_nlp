@@ -97,6 +97,7 @@ Then, generate a question and check the user answer as usual.
 
 ## To learn more
 - Korp user manual: [`spraakbanken.gu.se/en/tools/korp/user-manual`](https://spraakbanken.gu.se/en/tools/korp/user-manual)
-- Official Spacy website: [`spacy.io`]((https://spacy.io/))
+- Official Spacy website: [`spacy.io`](https://spacy.io/)
+- the code: [`github.com/harisont/advpy_nlp`](https://github.com/harisont/advpy_nlp)
 - the exercise class tomorrow <!--show pdf of the exercise-->
 - <!--and last but not least-->Aarne's Computational Syntax course
